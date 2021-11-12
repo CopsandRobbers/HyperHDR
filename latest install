@@ -1,0 +1,8 @@
+sudo apt update
+sudo apt upgrade -y
+wget https://github.com/CopsandRobbers/HyperHDR/releases/download/18/HyperHDR-18.0.0.0beta1-buster-Linux-armv7l.deb
+sudo apt install ./HyperHDR-18.0.0.0beta1-buster-Linux-armv7l.deb
+sudo sed -i '/^User/d' /etc/systemd/system/hyperhdr\@.service
+sudo systemctl daemon-reload
+sudo service hyperhdr@pi restart
+sudo service hyperhdr@pi status
